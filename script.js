@@ -12,15 +12,24 @@ const prevBtn = document.querySelector('.carousel-btn.prev');
 const nextBtn = document.querySelector('.carousel-btn.next');
 
 if (track && prevBtn && nextBtn) {
-  const card = track.querySelector('.project-card');
-  const scrollAmount = () => (card ? card.offsetWidth + 32 : 300);
+  const cards = track.querySelectorAll('.project-card');
+  let index = 0;
+
+  const scrollToCard = () => {
+    const card = cards[index];
+    if (card) {
+      track.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
+    }
+  };
 
   prevBtn.addEventListener('click', () => {
-    track.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    index = (index - 1 + cards.length) % cards.length;
+    scrollToCard();
   });
 
   nextBtn.addEventListener('click', () => {
-    track.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    index = (index + 1) % cards.length;
+    scrollToCard();
   });
 }
 
@@ -30,15 +39,24 @@ const compPrev = document.querySelector('.carousel-btn.comp-prev');
 const compNext = document.querySelector('.carousel-btn.comp-next');
 
 if (compTrack && compPrev && compNext) {
-  const cCard = compTrack.querySelector('.competence-card');
-  const compScrollAmount = () => (cCard ? cCard.offsetWidth + 32 : 300);
+  const cards = compTrack.querySelectorAll('.competence-card');
+  let index = 0;
+
+  const scrollToCard = () => {
+    const card = cards[index];
+    if (card) {
+      compTrack.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
+    }
+  };
 
   compPrev.addEventListener('click', () => {
-    compTrack.scrollBy({ left: -compScrollAmount(), behavior: 'smooth' });
+    index = (index - 1 + cards.length) % cards.length;
+    scrollToCard();
   });
 
   compNext.addEventListener('click', () => {
-    compTrack.scrollBy({ left: compScrollAmount(), behavior: 'smooth' });
+    index = (index + 1) % cards.length;
+    scrollToCard();
   });
 }
 

@@ -122,8 +122,8 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1rem;
-  flex: 0 0 80%;
-  max-width: 300px;
+  flex: 0 0 100%;
+  max-width: 100%;
   scroll-snap-align: center;
   margin: 0 1rem;
   transition: transform 0.3s;
@@ -168,8 +168,8 @@ body {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 1rem;
-  flex: 0 0 80%;
-  max-width: 300px;
+  flex: 0 0 100%;
+  max-width: 100%;
   scroll-snap-align: center;
   margin: 0 1rem;
   cursor: pointer;
@@ -240,7 +240,7 @@ body {
   }
 
   .project-card {
-    flex: 0 0 90%;
+    flex: 0 0 100%;
     margin: 0 auto;
   }
 
