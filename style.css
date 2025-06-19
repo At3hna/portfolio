@@ -170,6 +170,8 @@ body {
   padding: 1rem;
   flex: 0 0 100%;
   max-width: 100%;
+  flex: 0 0 80%;
+  max-width: 300px;
   scroll-snap-align: center;
   margin: 0 1rem;
   cursor: pointer;
