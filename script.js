@@ -6,56 +6,40 @@ links.forEach(link => {
   });
 });
 
-function initCarousel(carousel) {
-  const track = carousel.querySelector('.carousel-track');
-  const slides = Array.from(track.children);
-  const prev = carousel.querySelector('.carousel-prev');
-  const next = carousel.querySelector('.carousel-next');
-  const dotsContainer = carousel.querySelector('.carousel-dots');
-
-  let index = 0;
-
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.setAttribute('role', 'tab');
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => {
-      index = i;
-      update();
-    });
-    dotsContainer.appendChild(dot);
-  });
-  const dots = Array.from(dotsContainer.children);
-
-  function update() {
-    track.style.transform = `translateX(-${index * 100}%)`;
-    dots.forEach((d, i) => {
-      d.classList.toggle('active', i === index);
-      d.setAttribute('aria-selected', i === index);
-    });
+// Swiper initialization for carousels
+new Swiper('.projects-carousel', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.projects-carousel .swiper-button-next',
+    prevEl: '.projects-carousel .swiper-button-prev'
+  },
+  pagination: {
+    el: '.projects-carousel .swiper-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
   }
+});
 
-  function nextSlide() {
-    index = (index + 1) % slides.length;
-    update();
+new Swiper('.competence-carousel', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  navigation: {
+    nextEl: '.competence-carousel .swiper-button-next',
+    prevEl: '.competence-carousel .swiper-button-prev'
+  },
+  pagination: {
+    el: '.competence-carousel .swiper-pagination',
+    clickable: true
+  },
+  breakpoints: {
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
   }
-
-  function prevSlide() {
-    index = (index - 1 + slides.length) % slides.length;
-    update();
-  }
-
-  next.addEventListener('click', nextSlide);
-  prev.addEventListener('click', prevSlide);
-
-  let autoSlide = setInterval(nextSlide, 5000);
-  carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
-  carousel.addEventListener('mouseleave', () => autoSlide = setInterval(nextSlide, 5000));
-
-  update();
-}
-
-document.querySelectorAll('.carousel').forEach(initCarousel);
+});
 
 // Modal for competence projects
 const modal = document.getElementById('competence-modal');

@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio - Jonathan Berry</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- SwiperJS library -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -30,72 +36,84 @@
   <!-- PROJECTS -->
     <section id="projects" class="section-projects container">
     <h2>Projets</h2>
-    <div class="carousel" role="region" aria-label="Galerie projets" aria-live="polite">
-      <button class="carousel-prev" aria-label="Précédent">&#10094;</button>
-      <div class="carousel-track projects-grid">
-      <!-- Projet 6 -->
-      <figure class="project-card carousel-slide">
-        <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Site sur l’horlogerie" />
-        <figcaption>
-          <h3>Site sur l’horlogerie</h3>
-          <p>Site montrant l’histoire de l’horlogerie, premier site que j’ai fait.</p>
-          <p><strong>Techs :</strong> HTML, CSS</p>
-        </figcaption>
-      </figure>
+    <div class="swiper projects-carousel" role="region" aria-label="Galerie projets" aria-live="polite">
+      <div class="swiper-wrapper">
+        <!-- Projet 6 -->
+        <div class="swiper-slide">
+          <figure class="project-card">
+            <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Site sur l’horlogerie" />
+            <figcaption>
+              <h3>Site sur l’horlogerie</h3>
+              <p>Site montrant l’histoire de l’horlogerie, premier site que j’ai fait.</p>
+              <p><strong>Techs :</strong> HTML, CSS</p>
+            </figcaption>
+          </figure>
+        </div>
 
-      <!-- Projet 1 -->
-      <figure class="project-card carousel-slide">
-        <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Carty" />
-        <figcaption>
-          <h3>Carty</h3>
-          <p>Application de gestion de liste pour ses courses.</p>
-          <p><strong>Techs :</strong> Symfony</p>
-          <a href="https://forge.univ-lyon1.fr/jonathan.berry/carty" class="btn">Voir le code</a>
-        </figcaption>
-      </figure>
-      <!-- Projet 2 -->
-      <figure class="project-card carousel-slide">
-        <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Blackjack" />
-        <figcaption>
-          <h3>Blackjack</h3>
-          <p>Jeu de blackjack.</p>
-          <p><strong>Techs :</strong> Python</p>
-          <a href="https://forge.univ-lyon1.fr/jonathan.berry/blackjack" class="btn">Voir le code</a>
-        </figcaption>
-      </figure>
-      <!-- Projet 3 -->
-      <figure class="project-card carousel-slide">
-        <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Fou2Food" />
-        <figcaption>
-          <h3>Fou2Food</h3>
-          <p>Blog de partage d’avis sur les restaurants.</p>
-          <p><strong>Techs :</strong> Symfony</p>
-          <a href="https://github.com/Team-Maitrobe/blogPHP" class="btn">Voir le code</a>
-        </figcaption>
-      </figure>
-      <!-- Projet 4 -->
-      <figure class="project-card carousel-slide">
-        <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet SAE Projet libre fou2foot" />
-        <figcaption>
-          <h3>SAE Projet libre fou2foot</h3>
-          <p>Développement d’un site de paris fictif en ligne.</p>
-          <p><strong>Techs :</strong> JS, PHP, HTML, CSS, MySQL</p>
-          <a href="https://forge.univ-lyon1.fr/p2304936/sae_s3-jmhm" class="btn">Voir le code</a>
-        </figcaption>
-      </figure>
+        <!-- Projet 1 -->
+        <div class="swiper-slide">
+          <figure class="project-card">
+            <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Carty" />
+            <figcaption>
+              <h3>Carty</h3>
+              <p>Application de gestion de liste pour ses courses.</p>
+              <p><strong>Techs :</strong> Symfony</p>
+              <a href="https://forge.univ-lyon1.fr/jonathan.berry/carty" class="btn">Voir le code</a>
+            </figcaption>
+          </figure>
+        </div>
+        <!-- Projet 2 -->
+        <div class="swiper-slide">
+          <figure class="project-card">
+            <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Blackjack" />
+            <figcaption>
+              <h3>Blackjack</h3>
+              <p>Jeu de blackjack.</p>
+              <p><strong>Techs :</strong> Python</p>
+              <a href="https://forge.univ-lyon1.fr/jonathan.berry/blackjack" class="btn">Voir le code</a>
+            </figcaption>
+          </figure>
+        </div>
+        <!-- Projet 3 -->
+        <div class="swiper-slide">
+          <figure class="project-card">
+            <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet Fou2Food" />
+            <figcaption>
+              <h3>Fou2Food</h3>
+              <p>Blog de partage d’avis sur les restaurants.</p>
+              <p><strong>Techs :</strong> Symfony</p>
+              <a href="https://github.com/Team-Maitrobe/blogPHP" class="btn">Voir le code</a>
+            </figcaption>
+          </figure>
+        </div>
+        <!-- Projet 4 -->
+        <div class="swiper-slide">
+          <figure class="project-card">
+            <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet SAE Projet libre fou2foot" />
+            <figcaption>
+              <h3>SAE Projet libre fou2foot</h3>
+              <p>Développement d’un site de paris fictif en ligne.</p>
+              <p><strong>Techs :</strong> JS, PHP, HTML, CSS, MySQL</p>
+              <a href="https://forge.univ-lyon1.fr/p2304936/sae_s3-jmhm" class="btn">Voir le code</a>
+            </figcaption>
+          </figure>
+        </div>
 
-      <!-- Projet 5 -->
-      <figure class="project-card carousel-slide">
-        <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet SAE S2.04 Exploitation BD" />
-        <figcaption>
-          <h3>SAE S2.04 Exploitation BD</h3>
-          <p>Création d’un tableau de bord interactif sous Power BI pour visualiser et analyser les données commerciales d’une entreprise fictive afin d’aider à la prise de décision.</p>
-          <p><strong>Techs :</strong> SQL Developer, Oracle Database, Power BI, SQL</p>
-        </figcaption>
-      </figure>
+        <!-- Projet 5 -->
+        <div class="swiper-slide">
+          <figure class="project-card">
+            <img src="https://via.placeholder.com/400x250" alt="Aperçu du projet SAE S2.04 Exploitation BD" />
+            <figcaption>
+              <h3>SAE S2.04 Exploitation BD</h3>
+              <p>Création d’un tableau de bord interactif sous Power BI pour visualiser et analyser les données commerciales d’une entreprise fictive afin d’aider à la prise de décision.</p>
+              <p><strong>Techs :</strong> SQL Developer, Oracle Database, Power BI, SQL</p>
+            </figcaption>
+          </figure>
+        </div>
       </div>
-      <button class="carousel-next" aria-label="Suivant">&#10095;</button>
-      <ul class="carousel-dots"></ul>
+      <div class="swiper-button-prev" aria-label="Précédent"></div>
+      <div class="swiper-button-next" aria-label="Suivant"></div>
+      <div class="swiper-pagination"></div>
     </div>
   </section>
 
@@ -104,68 +122,96 @@
   <section id="skills" class="section-skills container">
     <h2>Compétences</h2>
     <h3>Compétences du B.U.T</h3>
-    <div class="carousel competence-carousel" role="region" aria-label="Compétences" aria-live="polite">
-      <button class="carousel-prev comp-prev" aria-label="Précédent">&#10094;</button>
-      <div class="carousel-track competences-grid">
-        <div class="competence-card" data-code="CE1.01 / AC11.04" data-projects="Site sur l’horlogerie">
-          <h4>Développer des interfaces utilisateurs</h4>
-          <p>Algorithme et programmation niveau 1</p>
+    <div class="swiper competence-carousel" role="region" aria-label="Compétences" aria-live="polite">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE1.01 / AC11.04" data-projects="Site sur l’horlogerie">
+            <h4>Développer des interfaces utilisateurs</h4>
+            <p>Algorithme et programmation niveau 1</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE6.01 / AC16.04" data-projects="Site sur l’horlogerie">
-          <h4>Compétences interpersonnelles et intégration</h4>
-          <p>Communication claire et rigueur</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE6.01 / AC16.04" data-projects="Site sur l’horlogerie">
+            <h4>Compétences interpersonnelles et intégration</h4>
+            <p>Communication claire et rigueur</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE1.03 / CE1.04" data-projects="Carty">
-          <h4>Conception, qualité, tests et ergonomie</h4>
-          <p>Bonnes pratiques et documentation</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE1.03 / CE1.04" data-projects="Carty">
+            <h4>Conception, qualité, tests et ergonomie</h4>
+            <p>Bonnes pratiques et documentation</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE4.01" data-projects="Carty">
-          <h4>Base de données et sécurité</h4>
-          <p>Requêtes sécurisées et optimisation</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE4.01" data-projects="Carty">
+            <h4>Base de données et sécurité</h4>
+            <p>Requêtes sécurisées et optimisation</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE5.02" data-projects="Carty">
-          <h4>Gestion de projet et suivi</h4>
-          <p>Définition du besoin et planification</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE5.02" data-projects="Carty">
+            <h4>Gestion de projet et suivi</h4>
+            <p>Définition du besoin et planification</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE6.02" data-projects="Carty">
-          <h4>Travail en équipe et suivi</h4>
-          <p>Méthodes collaboratives</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE6.02" data-projects="Carty">
+            <h4>Travail en équipe et suivi</h4>
+            <p>Méthodes collaboratives</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE1.03 / CE1.06" data-projects="Blackjack">
-          <h4>Algorithmes et coding</h4>
-          <p>Gestion de la logique du jeu</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE1.03 / CE1.06" data-projects="Blackjack">
+            <h4>Algorithmes et coding</h4>
+            <p>Gestion de la logique du jeu</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE2.01" data-projects="Blackjack">
-          <h4>Optimisation</h4>
-          <p>Structuration et performances</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE2.01" data-projects="Blackjack">
+            <h4>Optimisation</h4>
+            <p>Structuration et performances</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE5.01" data-projects="Blackjack">
-          <h4>Rigueur projet</h4>
-          <p>Démarche proactive</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE5.01" data-projects="Blackjack">
+            <h4>Rigueur projet</h4>
+            <p>Démarche proactive</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE1.01 / CE1.03" data-projects="Fou2Food">
-          <h4>Développement complet applicatif</h4>
-          <p>Backend, frontend et tests</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE1.01 / CE1.03" data-projects="Fou2Food">
+            <h4>Développement complet applicatif</h4>
+            <p>Backend, frontend et tests</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE3.01" data-projects="Fou2Food">
-          <h4>Sécurisation et déploiement</h4>
-          <p>Mise en ligne et protection des données</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE3.01" data-projects="Fou2Food">
+            <h4>Sécurisation et déploiement</h4>
+            <p>Mise en ligne et protection des données</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE4.01–CE4.03" data-projects="Fou2Food">
-          <h4>Gestion et sécurité de la BD</h4>
-          <p>Schéma, requêtes et restitution</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE4.01–CE4.03" data-projects="Fou2Food">
+            <h4>Gestion et sécurité de la BD</h4>
+            <p>Schéma, requêtes et restitution</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE5.01–CE5.04" data-projects="Fou2Food">
-          <h4>Pilotage et gestion de projet</h4>
-          <p>Spécification et suivi</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE5.01–CE5.04" data-projects="Fou2Food">
+            <h4>Pilotage et gestion de projet</h4>
+            <p>Spécification et suivi</p>
+          </div>
         </div>
-        <div class="competence-card" data-code="CE6.01–CE6.04" data-projects="Fou2Food">
-          <h4>Travail en équipe et communication</h4>
-          <p>Gestion de versions et évolution</p>
+        <div class="swiper-slide">
+          <div class="competence-card" data-code="CE6.01–CE6.04" data-projects="Fou2Food">
+            <h4>Travail en équipe et communication</h4>
+            <p>Gestion de versions et évolution</p>
+          </div>
         </div>
       </div>
-      <button class="carousel-next comp-next" aria-label="Suivant">&#10095;</button>
-      <ul class="carousel-dots"></ul>
+      <div class="swiper-button-prev comp-prev" aria-label="Précédent"></div>
+      <div class="swiper-button-next comp-next" aria-label="Suivant"></div>
+      <div class="swiper-pagination"></div>
     </div>
 
     <ul class="skills-list">
