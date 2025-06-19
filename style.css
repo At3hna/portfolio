@@ -38,7 +38,8 @@ body {
   font-size: 2rem;
 }
 .site-footer {
-  flex: 0 0 80%;
+  width: 100%;
+  flex: 0 0 auto;
 }
 
 
