@@ -31,14 +31,17 @@ body {
   background: var(--accent);
   color: #fff;
   padding: 1rem 0;
+  width: 100%;
+  flex: 0 0 auto;
 }
 .site-header h1 {
   font-size: 2rem;
 }
-.site-header,
 .site-footer {
-  flex: 0 0 80%;
+  width: 100%;
+  flex: 0 0 auto;
 }
+
 
 .site-header .subtitle {
   font-size: 1rem;
