@@ -1,64 +1,61 @@
 const links = document.querySelectorAll('a[href^="#"]');
 links.forEach(link => {
-  link.addEventListener('click', function(e) {
+  link.addEventListener('click', function (e) {
     e.preventDefault();
     document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
   });
 });
 
-// Carousel functionality
-const track = document.querySelector('.projects-grid');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
+function initCarousel(carousel) {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = Array.from(track.children);
+  const prev = carousel.querySelector('.carousel-prev');
+  const next = carousel.querySelector('.carousel-next');
+  const dotsContainer = carousel.querySelector('.carousel-dots');
 
-if (track && prevBtn && nextBtn) {
-  const cards = track.querySelectorAll('.project-card');
   let index = 0;
 
-  const scrollToCard = () => {
-    const card = cards[index];
-    if (card) {
-      track.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
-    }
-  };
-
-  prevBtn.addEventListener('click', () => {
-    index = (index - 1 + cards.length) % cards.length;
-    scrollToCard();
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('role', 'tab');
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', () => {
+      index = i;
+      update();
+    });
+    dotsContainer.appendChild(dot);
   });
+  const dots = Array.from(dotsContainer.children);
 
-  nextBtn.addEventListener('click', () => {
-    index = (index + 1) % cards.length;
-    scrollToCard();
-  });
+  function update() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === index);
+      d.setAttribute('aria-selected', i === index);
+    });
+  }
+
+  function nextSlide() {
+    index = (index + 1) % slides.length;
+    update();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + slides.length) % slides.length;
+    update();
+  }
+
+  next.addEventListener('click', nextSlide);
+  prev.addEventListener('click', prevSlide);
+
+  let autoSlide = setInterval(nextSlide, 5000);
+  carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  carousel.addEventListener('mouseleave', () => autoSlide = setInterval(nextSlide, 5000));
+
+  update();
 }
 
-// Competence carousel
-const compTrack = document.querySelector('.competences-grid');
-const compPrev = document.querySelector('.carousel-btn.comp-prev');
-const compNext = document.querySelector('.carousel-btn.comp-next');
-
-if (compTrack && compPrev && compNext) {
-  const cards = compTrack.querySelectorAll('.competence-card');
-  let index = 0;
-
-  const scrollToCard = () => {
-    const card = cards[index];
-    if (card) {
-      compTrack.scrollTo({ left: card.offsetLeft, behavior: 'smooth' });
-    }
-  };
-
-  compPrev.addEventListener('click', () => {
-    index = (index - 1 + cards.length) % cards.length;
-    scrollToCard();
-  });
-
-  compNext.addEventListener('click', () => {
-    index = (index + 1) % cards.length;
-    scrollToCard();
-  });
-}
+document.querySelectorAll('.carousel').forEach(initCarousel);
 
 // Modal for competence projects
 const modal = document.getElementById('competence-modal');

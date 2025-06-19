@@ -84,12 +84,26 @@ body {
 .section-skills {
   margin: 2rem 0;
 }
+
 .carousel {
   position: relative;
   flex: 0 0 80%;
+  overflow: hidden;
 }
 
-.carousel-btn {
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide img {
+  object-fit: cover;
+  max-height: 400px;
+  width: 100%;
+}
+
+.carousel-prev,
+.carousel-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -101,19 +115,39 @@ body {
   z-index: 1;
 }
 
-.carousel-btn.prev {
+.carousel-prev {
   left: -10px;
 }
 
-.carousel-btn.next {
+.carousel-next {
   right: -10px;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.carousel-dots li,
+.carousel-dots button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ccc;
+  padding: 0;
+  cursor: pointer;
+}
+
+.carousel-dots .active {
+  background: var(--accent);
 }
 
 .projects-grid {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   gap: 1rem;
   padding: 1rem 0;
 }
@@ -156,9 +190,6 @@ body {
 
 .competences-grid {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   gap: 1rem;
   padding: 1rem 0;
 }
@@ -244,11 +275,20 @@ body {
     margin: 0 auto;
   }
 
-  .carousel-btn.prev {
+  .carousel-prev,
+  .carousel-next {
+    font-size: 24px;
+  }
+
+  .carousel-prev {
     left: 0;
   }
 
-  .carousel-btn.next {
+  .carousel-next {
     right: 0;
+  }
+
+  .carousel-slide img {
+    max-height: 250px;
   }
 }
